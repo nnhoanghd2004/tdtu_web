@@ -1,0 +1,438 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html class="">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>52200079(Lab1)</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+	</head>
+	<body class="text-black">
+		<header>
+			<nav class="w-full">
+				<div class="container mx-auto h-full flex justify-between items-center">
+					<img
+						class="w-16 h-16 rounded-full"
+						src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/399862577_4391509687741506_4961352823905162984_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeEEyjyvlems8f3HYIDpsXeKi9lc00uUNnmL2VzTS5Q2eeVIAS0xp2NeeQZQMNdigm0f4aOOLDKTGZZVvoELD-oe&_nc_ohc=H364_eYTcYUAX8QSIXL&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfAd7H-c9BZ_QIgC2-Wx_kLbEiFp0MFO0RIMx2qGRcZOUw&oe=65C1B259"
+						alt="Rounded avatar"
+					/>
+					<ul class="items-center justify-center h-full hidden lg:flex">
+						<li class="p-4 m-4 text-lg font-semibold transition-all duration-200 ease hover:rounded-xl hover:bg-gray-100">
+							<a
+								class=""
+								href="#"
+								>Home</a
+							>
+						</li>
+						<li class="p-4 m-4 text-lg font-semibold transition-all duration-200 ease hover:rounded-xl hover:bg-gray-100">
+							<a
+								class=""
+								href="#Table"
+								>Weekly Schedule</a
+							>
+						</li>
+						<li class="p-4 m-4 text-lg font-semibold transition-all duration-200 ease hover:rounded-xl hover:bg-gray-100">
+							<a
+								class=""
+								href="#Login"
+								>Login</a
+							>
+						</li>
+						<li class="p-4 m-4 text-lg font-semibold transition-all duration-200 ease hover:rounded-xl hover:bg-gray-100">
+							<a
+								class=""
+								href="#Register"
+								>Register</a
+							>
+						</li>
+						<li class="p-4 m-4 text-lg font-semibold transition-all duration-200 ease hover:rounded-xl hover:bg-gray-100">
+							<a
+								class=""
+								href="#About"
+								>About</a
+							>
+						</li>
+					</ul>
+					<ul
+						id="socialLink"
+						class="flex"
+					></ul>
+				</div>
+			</nav>
+		</header>
+		<div class="container mx-auto">
+			<div
+				id="#Table"
+				class="relative overflow-x-auto shadow-md sm:rounded-lg mb-20"
+			>
+				<h2 class="text-4xl font-bold my-4 flex justify-center"><div class="border-b-4 border-b-black pb-2">Weekly Schedule</div></h2>
+				<table class="w-full text-lg text-left rtl:text-right text-gray-500">
+					<thead class="text-gray-700 uppercase border-b">
+						<tr>
+							<th
+								scope="col"
+								class="px-6 py-3 bg-gray-50 text-center"
+							>
+								Period/Day
+							</th>
+							<th
+								scope="col"
+								class="px-6 py-3 text-center"
+							>
+								Monday
+							</th>
+							<th
+								scope="col"
+								class="px-6 py-3 text-center bg-gray-50"
+							>
+								Tuesday
+							</th>
+							<th
+								scope="col"
+								class="px-6 py-3 text-center"
+							>
+								Wednesday
+							</th>
+							<th
+								scope="col"
+								class="px-6 py-3 text-center bg-gray-50"
+							>
+								Thursday
+							</th>
+							<th
+								scope="col"
+								class="px-6 py-3 text-center"
+							>
+								Friday
+							</th>
+
+							<th
+								scope="col"
+								class="px-6 py-3 text-center bg-gray-50"
+							>
+								Saturday
+							</th>
+
+							<th
+								scope="col"
+								class="px-6 py-3 text-center"
+							>
+								Sunday
+							</th>
+						</tr>
+					</thead>
+					<tbody id="schedule"></tbody>
+				</table>
+			</div>
+			<div
+				id="#Login"
+				class="max-w-screen-sm mx-auto p-10 border border-2 border-solid rounded-2xl"
+			>
+				<h2 class="text-4xl font-bold my-4 flex justify-center"><div>Login</div></h2>
+				<form class="max-w-sm mx-auto text-lg">
+					<div class="mb-5">
+						<label
+							for="email"
+							class="block mb-2 font-medium text-gray-900"
+							>Your email</label
+						>
+						<input
+							type="email"
+							id="email"
+							class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+							required
+						/>
+					</div>
+					<div class="mb-5">
+						<label
+							for="password"
+							class="block mb-2 font-medium text-gray-900"
+							>Your password</label
+						>
+						<input
+							type="password"
+							id="password"
+							class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+							required
+						/>
+					</div>
+					<div class="flex items-start mb-5">
+						<div class="flex items-center h-5">
+							<input
+								id="remember"
+								type="checkbox"
+								value=""
+								class="w-4 h-4 border border-gray-300 rounded bg-gray-50"
+								required
+							/>
+						</div>
+						<label
+							for="remember"
+							class="ms-2 font-medium text-gray-900"
+							>Remember me</label
+						>
+					</div>
+					<button
+						type="submit"
+						class="text-white bg-black hover:bg-black/80 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center"
+					>
+						Submit
+					</button>
+					<a
+						class="block text-blue-700 mt-4"
+						href="#"
+						>Create account</a
+					>
+					<a
+						class="block text-blue-700 mt-2"
+						href="#"
+						>I forgot my password</a
+					>
+				</form>
+			</div>
+			<div
+				id="#Register"
+				class="max-w-screen-sm mx-auto p-10 border border-2 border-solid rounded-2xl mt-20"
+			>
+				<h2 class="text-4xl font-bold my-4 flex justify-center"><div>Register</div></h2>
+				<form class="max-w-sm mx-auto text-lg">
+					<div class="mb-5">
+						<label
+							for="email"
+							class="block mb-2 font-medium text-gray-900"
+							>Your name</label
+						>
+						<input
+							type="text"
+							id="name"
+							class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+							required
+						/>
+					</div>
+
+					<div class="mb-5">
+						<label
+							for="email"
+							class="block mb-2 font-medium text-gray-900"
+							>Your email</label
+						>
+						<input
+							type="email"
+							id="email"
+							class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+							required
+						/>
+					</div>
+
+					<div class="mb-5">
+						<label
+							for="birthday"
+							class="block mb-2 font-medium text-gray-900"
+							>Your birthday</label
+						>
+						<input
+							type="date"
+							id="birthday"
+							class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+							required
+						/>
+					</div>
+					<div class="mb-5">
+						<label
+							for="birthtime"
+							class="block mb-2 font-medium text-gray-900"
+							>Your birthtime</label
+						>
+						<input
+							type="time"
+							id="birthtime"
+							class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+							required
+						/>
+					</div>
+
+					<div>
+						<label class="block mb-2 font-medium text-gray-900">Gender</label>
+						<div class="inline-flex items-center mb-4">
+							<input
+								id="Male"
+								type="radio"
+								value="Female"
+								name="default-radio"
+								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+							/>
+							<label
+								for="Male"
+								class="ms-2 font-medium text-gray-900"
+								>Male</label
+							>
+						</div>
+						<div class="inline-flex items-center">
+							<input
+								id="Female"
+								type="radio"
+								value=""
+								name="default-radio"
+								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+							/>
+							<label
+								for="Female"
+								class="ms-2 font-medium text-gray-900"
+								>Female</label
+							>
+						</div>
+					</div>
+
+					<div class="mb-5">
+						<label
+							for="gender"
+							class="block mb-2 font-medium text-gray-900"
+							>From</label
+						>
+						<select
+							id="gender"
+							class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+						>
+							<option>Select a country</option>
+							<optgroup label="Asia">
+								<option>VietNam</option>
+								<option>Laos</option>
+								<option>Combodia</option>
+								<option>Singapore</option>
+							</optgroup>
+							<optgroup label="Europe">
+								<option>France</option>
+								<option>Belgium</option>
+								<option>Italy</option>
+								<option>Finland</option>
+								<option>Ireland</option>
+							</optgroup>
+						</select>
+					</div>
+
+					<div class="mb-5">
+						<label class="block mb-2 font-medium text-gray-900">Favorite IDE</label>
+						<div class="flex items-center mb-4">
+							<input
+								id="vscode"
+								type="checkbox"
+								value=""
+								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+							/>
+							<label
+								for="vscode"
+								class="ms-2 text-gray-900 dark:text-gray-300"
+								>Visual Studio Code</label
+							>
+						</div>
+						<div class="flex items-center mb-4">
+							<input
+								id="sublime text"
+								type="checkbox"
+								value=""
+								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+							/>
+							<label
+								for="sublime text"
+								class="ms-2 text-gray-900 dark:text-gray-300"
+								>Sublime Text</label
+							>
+						</div>
+						<div class="flex items-center mb-4">
+							<input
+								id="Eclipse"
+								type="checkbox"
+								value=""
+								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+							/>
+							<label
+								for="Eclipse"
+								class="ms-2 text-gray-900 dark:text-gray-300"
+								>Eclipse</label
+							>
+						</div>
+						<div class="flex items-center mb-4">
+							<input
+								id="Atom"
+								type="checkbox"
+								value=""
+								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+							/>
+							<label
+								for="Atom"
+								class="ms-2 text-gray-900 dark:text-gray-300"
+								>Atom</label
+							>
+						</div>
+						<div class="flex items-center mb-4">
+							<input
+								id="Intelij Idea"
+								type="checkbox"
+								value=""
+								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+							/>
+							<label
+								for="Intelij Idea"
+								class="ms-2 text-gray-900 dark:text-gray-300"
+								>Intelij Idea</label
+							>
+						</div>
+					</div>
+
+					<div class="mb-5">
+						<div class="block mb-2 font-medium text-gray-900">TOEIC Score</div>
+						<input
+							name="toeic"
+							type="range"
+							max="990"
+							min="5"
+							value="5"
+							class="w-full"
+							required
+						/>
+					</div>
+					<div class="mb-5">
+						<label
+							for="Message"
+							class="block mb-2 font-medium text-gray-900"
+						>
+							Message
+						</label>
+						<textarea
+							name="Message"
+							id="Message"
+							cols="40"
+							rows="5"
+							class="rounded-xl"
+						></textarea>
+					</div>
+					<div class="flex justify-center">
+						<button
+							type="submit"
+							class="text-white bg-black hover:bg-black/80 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center"
+						>
+							Register
+						</button>
+						<button class="ml-5 text-white bg-black hover:bg-black/80 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">
+							Again
+						</button>
+					</div>
+				</form>
+			</div>
+			<div id="About">
+				<h2 class="text-4xl font-bold my-4 flex justify-center"><div class="border border-b-4 border-b-black pb-2">About</div></h2>
+				<div class="flex justify-center">
+					<div
+						id="listMember"
+						class="mx-auto inline-flex flex-wrap items-center"
+					></div>
+				</div>
+			</div>
+		</div>
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>

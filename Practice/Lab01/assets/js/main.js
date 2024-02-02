@@ -85,7 +85,7 @@ const listMember = document.querySelector('#listMember');
 html = '';
 
 listMemberArray.forEach((v, i) => {
-	html += `<div class="max-w-sm mb-10 bg-white border border-gray-200 rounded-lg shadow lg:mb-0"><img class="rounded-t-lg" src="${v.img}"/><div class="p-5"><h5 class="text-2xl font-bold tracking-tight text-gray-900">${v.name}</h5><div class="mb-4">${v.role}</div><p class="mb-3 font-normal text-gray-700">${v.desc}</p><div class="font-semibold">Specializes in</div><ul class="max-w-md space-y-1 list-disc list-inside dark:text-gray-400">`;
+	html += `<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"><img class="rounded-t-lg" src="${v.img}"/><div class="p-5"><h5 class="text-2xl font-bold tracking-tight text-gray-900">${v.name}</h5><div class="mb-4">${v.role}</div><p class="mb-3 font-normal text-gray-700">${v.desc}</p><div class="font-semibold">Specializes in</div><ul class="max-w-md space-y-1 list-disc list-inside dark:text-gray-400">`;
 	v.specializes.forEach((value) => {
 		html += `<li>${value}</li>`;
 	});

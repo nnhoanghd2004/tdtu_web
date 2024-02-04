@@ -1,0 +1,170 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html class="">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			href="./output.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="max-w-screen-xl mx-auto p-2">
+			<nav class="flex justify-between bg-white border-gray-200 dark:bg-gray-900">
+				<div>
+					<div class="inline-flex items-center ml-4">
+						<img
+							class="w-16 h-16 rounded-full"
+							src="https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/399862577_4391509687741506_4961352823905162984_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeEEyjyvlems8f3HYIDpsXeKi9lc00uUNnmL2VzTS5Q2eeVIAS0xp2NeeQZQMNdigm0f4aOOLDKTGZZVvoELD-oe&_nc_ohc=H364_eYTcYUAX8QSIXL&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfAd7H-c9BZ_QIgC2-Wx_kLbEiFp0MFO0RIMx2qGRcZOUw&oe=65C1B259"
+							alt="Rounded avatar"
+						/>
+						<div class="hidden text-lg font-semibold ml-5 md:block">Hoàng Nguyễn Shop</div>
+					</div>
+				</div>
+				<div class="flex flex-wrap items-center p-4 flex-row-reverse md:justify-center">
+					<button
+						id="buttonNav"
+						type="button"
+						class="float-right inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+					>
+						<svg
+							class="w-5 h-5"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 17 14"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M1 1h15M1 7h15M1 13h15"
+							/>
+						</svg>
+					</button>
+					<div
+						class="hidden w-full lg:block"
+						id="navbar"
+					></div>
+				</div>
+			</nav>
+		</div>
+		<div class="max-w-screen-xl mx-auto grid grid-cols-4 gap-2 dark:bg-gray-900">
+			<div class="hidden md:block md:col-span-1">
+				<div class="mb-2">
+					<div
+						class="flex justify-between font-bold text-lg px-5 py-4 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+						onclick="handleShow(0)"
+					>
+						<div>Category</div>
+						<div>
+							<svg
+								width="24px"
+								height="24px"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+									fill="#0F0F0F"
+								/>
+							</svg>
+						</div>
+					</div>
+					<ul
+						class="showSide"
+						class="hidden"
+					>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Shirt</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Pants</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Jacket</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Hat</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Item</li>
+					</ul>
+				</div>
+				<div class="mb-2">
+					<div
+						class="flex justify-between font-bold text-lg px-5 py-4 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+						onclick="handleShow(1)"
+					>
+						<div>Statistical access</div>
+						<svg
+							width="24px"
+							height="24px"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+								fill="#0F0F0F"
+							/>
+						</svg>
+					</div>
+					<ul
+						class="showSide"
+						class="px-5 bg-gray-100 hidden"
+					>
+						<li class="flex justify-between bg-gray-100 px-2 py-1">
+							<div>Today</div>
+							<div>100</div>
+						</li>
+						<li class="flex justify-between bg-gray-100 px-2 py-1">
+							<div>Tomorrow</div>
+							<div>100</div>
+						</li>
+						<li class="flex justify-between bg-gray-100 px-2 py-1">
+							<div>Last week</div>
+							<div>100</div>
+						</li>
+						<li class="flex justify-between bg-gray-100 px-2 py-1">
+							<div>Month</div>
+							<div>100</div>
+						</li>
+						<li class="flex justify-between bg-gray-100 px-2 py-1">
+							<div>Last Year</div>
+							<div>100</div>
+						</li>
+					</ul>
+				</div>
+				<div class="">
+					<div class="font-bold text-lg pl-5 py-4 bg-gray-300">Advertisement</div>
+					<ul>
+						<li class="flex justify-between">
+							<a
+								href=""
+								class="w-full"
+							>
+								<div class="w-full h-48 bg-gray-400"></div>
+							</a>
+						</li>
+						<li class="flex justify-between mt-2">
+							<a
+								href=""
+								class="w-full"
+							>
+								<div class="w-full h-48 bg-gray-400"></div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-span-4 md:col-span-3">
+				<div class="w-full h-96 bg-gray-500 flex justify-center items-center text-white text-4xl font-bold">Banner</div>
+				<div
+					id="products"
+					class="flex flex-row flex-wrap -mx-2"
+				></div>
+			</div>
+		</div>
+		<script src="/src/assets/main.js"></script>
+	</body>
+</html>

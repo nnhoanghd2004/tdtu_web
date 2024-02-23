@@ -1,0 +1,390 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html class="">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link
+			href="./output.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="max-w-screen-xl mx-auto px-2">
+			<div class="w-full h-96 bg-gray-500 leading-[384px] text-center font-bold text-6xl text-white">Banner</div>
+			<nav class="flex justify-between items-center bg-white border-gray-200 dark:bg-gray-900 py-2">
+				<div class="inline-flex items-center ml-4">
+					<img
+						class="w-16 h-16 rounded-full object-cover"
+						src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/427888582_4465617976997343_4359727408490062132_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFaKADCepgAeCRPFQKrheS2gwse2-Yfrf6DCx7b5h-t_mWUxWlEajP7gsqDjC9CCSeOu6_5SqQqV7ISmbDGHsws&_nc_ohc=TUwsj0i_RC4AX_DmSu1&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfDzG-gIyvkGg0nXDouab8--aSLT3MXlNA5v9zw626lBYQ&oe=65DDB4A4"
+						alt="Rounded avatar"
+					/>
+					<div class="hidden text-lg font-semibold ml-5 md:block">Hoàng Nguyễn Shop</div>
+				</div>
+				<div class="flex flex-wrap items-center p-4 flex-row-reverse md:justify-center">
+					<button
+						id="buttonNav"
+						type="button"
+						class="float-right inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+					>
+						<svg
+							class="w-5 h-5"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 17 14"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M1 1h15M1 7h15M1 13h15"
+							/>
+						</svg>
+					</button>
+					<div
+						class="hidden w-full lg:block"
+						id="navbar"
+					></div>
+				</div>
+			</nav>
+		</div>
+		<div class="max-w-screen-xl mx-auto dark:bg-gray-900 flex flex-col md:flex-row px-2">
+			<div class="px-2 basis-full order-1 md:basis-2/12">
+				<div class="mb-2">
+					<div
+						class="flex justify-between font-bold text-lg px-5 py-4 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+						onclick="handleShow(0)"
+					>
+						<div>Xe đạp điện</div>
+						<div>
+							<svg
+								width="24px"
+								height="24px"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+									fill="#0F0F0F"
+								/>
+							</svg>
+						</div>
+					</div>
+					<ul class="showSide hidden">
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Xe đạp 1</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Xe đạp 2</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Xe đạp 3</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Xe đạp 4</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Xe đạp 5</li>
+					</ul>
+				</div>
+				<div class="mb-2">
+					<div
+						class="flex justify-between font-bold text-lg px-5 py-4 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+						onclick="handleShow(1)"
+					>
+						<div>Phụ kiện xe đạp điện</div>
+						<div>
+							<svg
+								width="24px"
+								height="24px"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+									fill="#0F0F0F"
+								/>
+							</svg>
+						</div>
+					</div>
+					<ul class="showSide hidden">
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Phụ kiện 1</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Phụ kiện 2</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Phụ kiện 3</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Phụ kiện 4</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">Phụ kiện 5</li>
+						<img
+							src="/src/assets/img/HKbike_ZingerExtra_BannerWeb-011.jpg"
+							alt=""
+							class="w-full"
+						/>
+					</ul>
+				</div>
+			</div>
+
+			<div class="px-2 basis-full order-10 md:order-2 md:basis-8/12">
+				<div class="w-full h-96 bg-gray-500 flex justify-center items-center text-white text-4xl font-bold">Banner</div>
+				<div
+					id="products"
+					class="flex flex-row flex-wrap -mx-2"
+				></div>
+			</div>
+
+			<div class="px-2 basis-full order-3 md:basis-2/12">
+				<div class="mb-2">
+					<div
+						class="flex justify-between font-bold text-lg px-5 py-4 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+						onclick="handleShow(2)"
+					>
+						<div>Hỗ trợ trực tuyến</div>
+						<div>
+							<svg
+								width="24px"
+								height="24px"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+									fill="#0F0F0F"
+								/>
+							</svg>
+						</div>
+					</div>
+					<ul class="showSide hidden">
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">
+							<div class="w-full text-lg font-bold">Kinh doanh</div>
+							<div>0909090909090</div>
+						</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">
+							<div class="w-full text-lg font-bold">Kỹ thuật</div>
+							<div>0909090909090</div>
+						</li>
+						<li class="pl-8 py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">
+							<div class="w-full text-lg font-bold">Hỗ trợ trực tuyến</div>
+							<div>0909090909090</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mb-2">
+					<div
+						class="flex justify-between font-bold text-lg px-5 py-4 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+						onclick="handleShow(3)"
+					>
+						<div>Sản phẩm mới</div>
+						<div>
+							<svg
+								width="24px"
+								height="24px"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+									fill="#0F0F0F"
+								/>
+							</svg>
+						</div>
+					</div>
+					<ul class="showSide min-h-40 bg-slate-100 w-full hidden"></ul>
+				</div>
+				<div class="mb-2">
+					<div
+						class="flex justify-between font-bold text-lg px-5 py-4 bg-gray-300 hover:bg-gray-400 cursor-pointer"
+						onclick="handleShow(2)"
+					>
+						<div>Hỗ trợ trực tuyến</div>
+						<div>
+							<svg
+								width="24px"
+								height="24px"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+									fill="#0F0F0F"
+								/>
+							</svg>
+						</div>
+					</div>
+					<ul class="showSide hidden">
+						<li class="py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">
+							<img
+								src="/src/assets/img/1.jpg"
+								alt=""
+								class="w-full"
+							/>
+						</li>
+						<li class="py-1 bg-gray-100 hover:bg-gray-200 cursor-pointer">
+							<img
+								src="/src/assets/img/1.jpg"
+								alt=""
+								class="w-full"
+							/>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<footer class="bg-gray-100 dark:bg-gray-900 text-center">
+			<div class="mx-auto w-full max-w-screen-xl">
+				<div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Quy định mua hàng</h2>
+						<ul class="text-gray-500 dark:text-gray-400 font-medium">
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Quy định nội dung bình luận</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Cấc câu hỏi thường gặp</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Quy chế hoạt động của Website</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Quy định mua hàng</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Dịch vụ của chúng tôi</h2>
+						<ul class="text-gray-500 dark:text-gray-400 font-medium">
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Dịch vụ tư vấn xe đạp điẹn</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Cung cấp xe đạp</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Cung cấp các phụ kiện</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Cung cấp mẫu xe đạp điện mới</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Các hình thức thanh toán</h2>
+						<ul class="text-gray-500 dark:text-gray-400 font-medium">
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Liê hệ hỗ trợ về sản phẩm</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Thanh toán an toàn</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Người bán đảm bảo</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Các tin sản phẩm</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Kết nối với chúng tôi</h2>
+						<ul class="text-gray-500 dark:text-gray-400 font-medium grid grid-cols-2">
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Facebook</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Tweet</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Youtube</a
+								>
+							</li>
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Zing me</a
+								>
+							</li>
+
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>Google+</a
+								>
+							</li>
+
+							<li class="mb-4">
+								<a
+									href="#"
+									class="hover:underline"
+									>RSS</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="/src/assets/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,160 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta charset="UTF-8" />
+		<title>Table</title>
+	</head>
+	<body>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			select {
+				float: left;
+			}
+			img {
+				float: left;
+			}
+		</style>
+
+		<select
+			id="imageList"
+			name="imageList"
+			size="10"
+		>
+			<option
+				onclick="changeImg('01')"
+				value="pic_001.jpg"
+			>
+				pic_001.jpg
+			</option>
+			<option
+				onclick="changeImg('02')"
+				value="pic_002.jpg"
+			>
+				pic_002.jpg
+			</option>
+			<option
+				onclick="changeImg('03')"
+				value="pic_003.jpg"
+			>
+				pic_003.jpg
+			</option>
+			<option
+				onclick="changeImg('04')"
+				value="pic_004.jpg"
+			>
+				pic_004.jpg
+			</option>
+			<option
+				onclick="changeImg('05')"
+				value="pic_005.jpg"
+			>
+				pic_005.jpg
+			</option>
+			<option
+				onclick="changeImg('06')"
+				value="pic_006.jpg"
+			>
+				pic_006.jpg
+			</option>
+			<option
+				onclick="changeImg('07')"
+				value="pic_007.jpg"
+			>
+				pic_007.jpg
+			</option>
+			<option
+				onclick="changeImg('08')"
+				value="pic_008.jpg"
+			>
+				pic_008.jpg
+			</option>
+			<option
+				onclick="changeImg('09')"
+				value="pic_009.jpg"
+			>
+				pic_009.jpg
+			</option>
+			<option
+				onclick="changeImg('10')"
+				value="pic_010.jpg"
+			>
+				pic_010.jpg
+			</option>
+		</select>
+		<img
+			id="img"
+			src="images/pic_001.jpg"
+		/>
+		<button
+			type="button"
+			onclick="backImg()"
+		>
+			Back
+		</button>
+		<button
+			type="button"
+			onclick="startSlideShow()"
+		>
+			Start slideshow
+		</button>
+		<button
+			type="button"
+			onclick="nextImg()"
+		>
+			Next
+		</button>
+	</body>
+	<script>
+		const img = document.querySelector('#img');
+		let currentImg = 1;
+		let stateSlideShow = false;
+		let interval;
+
+		const changeImg = (value) => {
+			img.src = 'images/pic_0' + value + '.jpg';
+			currentImg = parseInt(value);
+		};
+
+		const nextImg = () => {
+			if (currentImg > 9) {
+				currentImg = 1;
+				changeImg('0' + currentImg);
+			} else {
+				currentImg += 1;
+				changeImg('0' + currentImg);
+			}
+		};
+
+		const backImg = () => {
+			if (currentImg < 2) {
+				currentImg = 10;
+				changeImg(currentImg);
+			} else {
+				currentImg -= 1;
+				changeImg('0' + currentImg);
+			}
+		};
+
+		const startSlideShow = () => {
+			if (!stateSlideShow) {
+				interval = setInterval(() => {
+					nextImg();
+					console.log('check');
+				}, 1000);
+				stateSlideShow = true;
+			} else {
+				clearInterval(interval);
+				stateSlideShow = false;
+			}
+		};
+	</script>
+</html>

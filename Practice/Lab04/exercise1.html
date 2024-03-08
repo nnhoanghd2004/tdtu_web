@@ -1,0 +1,72 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Đăng nhập</title>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+        <div class="container">
+            <h3 class="mt-5 mb-3 text-center text-primary">User Login</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form class="login border p-3 rounded" >
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                        </div>
+                        <div id="errorMessage"  class="my-3" style="color: rgb(185, 0, 0);font-size: 14px;" ></div>
+                        <div id="successessage"  class="my-3" style="color: green;font-size: 14px;" ></div>
+
+                        <button class="btn btn-primary" type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const form = document.querySelector('.login');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let errorMessage = document.querySelector('#errorMessage');
+            let successessage = document.querySelector('#successessage');
+            const data = new FormData(form);
+            const email = data.get('email');
+            const pass = data.get('password');
+            
+            if (!email) {
+                errorMessage.innerHTML = 'Please enter your email address';
+                errorMessage.classList.contains('hidden') && errorMessage.classList.remove('hidden');
+            } else if (!pass) {
+                errorMessage.innerHTML = 'Please enter your password';
+                errorMessage.classList.contains('hidden') && errorMessage.classList.remove('hidden');
+            } else if (pass.length < 7) {
+                errorMessage.innerHTML = 'Your password must contain at least 6 characters';
+                errorMessage.classList.contains('hidden') && errorMessage.classList.remove('hidden');
+            } else {
+                successessage.innerHTML = 'Login success';
+                errorMessage.classList.contains('hidden') && errorMessage.classList.remove('hidden');
+            }
+
+
+        })
+
+
+    </script>
+</html>

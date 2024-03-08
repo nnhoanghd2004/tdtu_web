@@ -1,0 +1,209 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>JS DOM Manipulations</title>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<style></style>
+
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8 myform border rounded p-4 mt-5">
+					<div class="form-group">
+						<label for="message">Text content:</label>
+						<input
+							type="text"
+							class="form-control"
+							id="message"
+							placeholder="Enter new text"
+							name="message"
+							oninput="changeText(this.value)"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="color">Text color:</label>
+						<select
+							name="color"
+							id="color"
+							class="custom-select"
+							onchange="changeColor(this.value)"
+						>
+							<option value="Black">Black</option>
+							<option value="Red">Red</option>
+							<option value="Green">Green</option>
+							<option value="Blue">Blue</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<div class="custom-control custom-switch">
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="bold"
+								onclick="changeStyle('bold')"
+							/>
+							<label
+								class="custom-control-label"
+								for="bold"
+								>Bold</label
+							>
+						</div>
+
+						<div class="custom-control custom-switch">
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="italic"
+								onclick="changeStyle('italic')"
+							/>
+							<label
+								class="custom-control-label"
+								for="italic"
+								>Italic</label
+							>
+						</div>
+
+						<div class="custom-control custom-switch">
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="underline"
+								onclick="changeStyle('underline')"
+							/>
+							<label
+								class="custom-control-label"
+								for="underline"
+								>Underline</label
+							>
+						</div>
+					</div>
+					<button
+						type="button"
+						class="btn btn-success"
+						onclick="restoreDefault()"
+					>
+						Restore Default
+					</button>
+				</div>
+			</div>
+			<div class="row justify-content-center mt-3">
+				<div
+					id="alert"
+					class="col-md-8 alert alert-success text-center"
+				>
+					This text will be changed immediately when typing new text.
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		let message = document.querySelector('#message');
+		let color = document.querySelector('#color');
+		let bold = document.querySelector('#bold');
+		let italic = document.querySelector('#italic');
+		let underline = document.querySelector('#underline');
+		let alert = document.querySelector('#alert');
+
+		const changeText = (value) => {
+			alert.innerHTML = value;
+		};
+
+		const changeColor = (value) => {
+			alert.classList.remove('alert-success');
+			alert.classList.remove('alert-secondary');
+			alert.classList.remove('alert-primary');
+			alert.classList.remove('alert-danger');
+			alert.classList.remove('text-success');
+			alert.classList.remove('text-dark');
+			alert.classList.remove('text-primary');
+			alert.classList.remove('text-danger');
+
+			switch (value) {
+				case 'Black':
+					alert.classList.add('text-dark');
+					break;
+				case 'Green':
+					alert.classList.add('text-success');
+					break;
+				case 'Red':
+					alert.classList.add('text-danger');
+					break;
+				case 'Blue':
+					alert.classList.add('text-primary');
+					break;
+			}
+
+			switch (value) {
+				case 'Black':
+					alert.classList.add('alert-secondary');
+					break;
+				case 'Green':
+					alert.classList.add('alert-success');
+					break;
+				case 'Red':
+					alert.classList.add('alert-danger');
+					break;
+				case 'Blue':
+					alert.classList.add('alert-primary');
+					break;
+			}
+		};
+
+		const changeStyle = (value) => {
+			const style = document.querySelector('#' + value);
+			if (style.checked) {
+				switch (value) {
+					case 'bold':
+						alert.style.fontWeight = 'bold';
+						break;
+					case 'italic':
+						alert.style.fontStyle = 'italic';
+						break;
+					case 'underline':
+						alert.style.textDecoration = 'underline';
+						break;
+				}
+			} else {
+				switch (value) {
+					case 'bold':
+						alert.style.fontWeight = 'normal';
+						break;
+					case 'italic':
+						alert.style.fontWeight = 'normal';
+						alert.style.fontStyle = 'normal';
+						break;
+					case 'underline':
+						alert.style.fontWeight = 'normal';
+						alert.style.fontStyle = 'normal';
+						alert.style.textDecoration = 'none';
+						break;
+				}
+			}
+		};
+
+		const restoreDefault = () => {
+			document.querySelector('#bold').checked = false;
+			document.querySelector('#italic').checked = false;
+			document.querySelector('#underline').checked = false;
+			changeStyle('bold');
+			changeStyle('italic');
+			changeStyle('underline');
+			color.value = 'Black';
+			changeColor('Black');
+		};
+	</script>
+</html>
